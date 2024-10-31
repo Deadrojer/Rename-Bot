@@ -73,7 +73,8 @@ async def send_doc(client, message):
             await client.send_message(LOG_CHANNEL, f"<b><u>New User Started The Bot</u></b> \n\n<b>User ID :</b> <code>{user_id}</code> \n<b>First Name :</b> {message.from_user.first_name} \n<b>Last Name :</b> {message.from_user.last_name} \n<b>User Name :</b> @{message.from_user.username} \n<b>User Mention :</b> {message.from_user.mention} \n<b>User Link :</b> <a href='tg://openmessage?user_id={user_id}'>Click Here</a> \n<b>User Plan :</b> {user}")
             return
   
-    botdata(int(botid))
+    
+botdata(int(botid))
     bot_data = find_one(int(botid))
     prrename = bot_data['total_rename']
     prsize = bot_data['total_size']
@@ -95,8 +96,9 @@ LIMIT = 120
     conversion = datetime.timedelta(seconds=left)
     ltime = str(conversion)
     if left > 0:
-        await message.reply_text(f"<b>Sorry Dude I Am Not Only For You \n\nFlood Control Is Active So Please Wait For {ltime} </b>", reply_to_message_id=message.id)
+        await message.reply_text(f"Sorry Dude I Am Not Only For You \n\nFlood Control Is Active So Please Wait For {ltime} ", reply_to_message_id=message.id)
     else:
+        pass       
         # Forward a single message
         media = await client.get_messages(message.chat.id, message.id)
         file = media.document or media.video or media.audio
