@@ -1,3 +1,4 @@
+from pyrogram import Client, filters
 from datetime import date as date_
 import os, re, datetime, random, asyncio, time, humanize
 from script import *
