@@ -74,6 +74,7 @@ async def send_doc(client, message):
             return
   
     
+
 botdata(int(botid))
     bot_data = find_one(int(botid))
     prrename = bot_data['total_rename']
@@ -87,8 +88,7 @@ botdata(int(botid))
     c_time = time.time()
 
     if user_type == "Free":
-
-LIMIT = 120
+        LIMIT = 120
     else:
         LIMIT = 10
     then = used_date + LIMIT
@@ -98,6 +98,7 @@ LIMIT = 120
     if left > 0:
         await message.reply_text(f"Sorry Dude I Am Not Only For You \n\nFlood Control Is Active So Please Wait For {ltime} ", reply_to_message_id=message.id)
     else:
+        pass
         pass       
         # Forward a single message
         media = await client.get_messages(message.chat.id, message.id)
