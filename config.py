@@ -14,8 +14,9 @@ STRING_SESSION = os.environ.get("STRING_SESSION", "")
 
 
 # Log & Force Channel Config
-+ FORCE_SUBS = os.environ.get("FORCE_SUBS", "omniscient_reader_view_poinnt")
-+ LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", "logsnarutorename"))
+
+FORCE_SUBS = os.environ.get("FORCE_SUBS", "omniscient_reader_view_poinnt")
+LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", "logsnarutorename"))
 
 
 # Mongo DB Database Config
