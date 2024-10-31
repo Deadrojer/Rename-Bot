@@ -33,14 +33,14 @@ async def start(client, message):
     await asyncio.sleep(2)
     await loading_sticker_message.delete()
     
-    text = f"""{message.from_user.mention} \nɪ  ᴀᴍ  ᴀɴ  ᴀᴅᴠᴀɴᴄᴇ  ꜰɪʟᴇ  ʀᴇɴᴀᴍᴇʀ  ᴀɴᴅ  ᴄᴏɴᴠᴇʀᴛᴇʀ  ʙᴏᴛ  ᴡɪᴛʜ  ᴘᴇʀᴍᴀɴᴇɴᴛ  ᴀɴᴅ  ᴄᴜsᴛᴏᴍ  ᴛʜᴜᴍʙɴᴀɪʟ  sᴜᴘᴘᴏʀᴛ.\n\nᴊᴜsᴛ  sᴇɴᴅ  ᴍᴇ  ᴀɴʏ  ᴠɪᴅᴇᴏ  ᴏʀ ᴅᴏᴄᴜᴍᴇɴᴛ !!\nᴏᴡɴᴇʀ @CodeXBro</b>"""
+    text = f"""{message.from_user.mention} \nɪ  ᴀᴍ  ᴀɴ  ᴀᴅᴠᴀɴᴄᴇ  ꜰɪʟᴇ  ʀᴇɴᴀᴍᴇʀ  ᴀɴᴅ  ᴄᴏɴᴠᴇʀᴛᴇʀ  ʙᴏᴛ  ᴡɪᴛʜ  ᴘᴇʀᴍᴀɴᴇɴᴛ  ᴀɴᴅ  ᴄᴜsᴛᴏᴍ  ᴛʜᴜᴍʙɴᴀɪʟ  sᴜᴘᴘᴏʀᴛ.\n\nᴊᴜsᴛ  sᴇɴᴅ  ᴍᴇ  ᴀɴʏ  ᴠɪᴅᴇᴏ  ᴏʀ ᴅᴏᴄᴜᴍᴇɴᴛ !!\nᴏᴡɴᴇʀ @NARUTO_UZUMAKI07th</b>"""
     
     button = InlineKeyboardMarkup([
-        [InlineKeyboardButton("📢 Updates", url="https://telegram.me/RahulReviewsYT"),
-        InlineKeyboardButton("💬 Support", url="https://telegram.me/CodeXSupport")],
+        [InlineKeyboardButton("📢 Updates", url="T.me/NARUTO_UZUMAKI07th"),
+        InlineKeyboardButton("💬 Support", url="T.me/NARUTO_UZUMAKI07th")],
         [InlineKeyboardButton("🛠️ Help", callback_data='help'),
         InlineKeyboardButton("❤️‍🩹 About", callback_data='about')],
-        [InlineKeyboardButton("🧑‍💻 Developer 🧑‍💻", url="https://telegram.me/CodeXBro")]
+        [InlineKeyboardButton("🧑‍💻 Developer 🧑‍💻", url="T.me/NARUTO_UZUMAKI07th")]
         ])
     
     await message.reply_photo(
@@ -72,7 +72,7 @@ async def send_doc(client, message):
                                          ]))
             await client.send_message(LOG_CHANNEL, f"<b><u>New User Started The Bot</u></b> \n\n<b>User ID :</b> <code>{user_id}</code> \n<b>First Name :</b> {message.from_user.first_name} \n<b>Last Name :</b> {message.from_user.last_name} \n<b>User Name :</b> @{message.from_user.username} \n<b>User Mention :</b> {message.from_user.mention} \n<b>User Link :</b> <a href='tg://openmessage?user_id={user_id}'>Click Here</a> \n<b>User Plan :</b> {user}")
             return
-		
+  
     botdata(int(botid))
     bot_data = find_one(int(botid))
     prrename = bot_data['total_rename']
@@ -86,7 +86,8 @@ async def send_doc(client, message):
     c_time = time.time()
 
     if user_type == "Free":
-        LIMIT = 120
+
+LIMIT = 120
     else:
         LIMIT = 10
     then = used_date + LIMIT
@@ -125,7 +126,7 @@ async def send_doc(client, message):
                     return
                 pre_check = check_expi(buy_date)
                 if pre_check == True:
-                    await message.reply_text(f"""__What Do You Want Me To Do With This File ?__\n\n**File Name :** `{filename}`\n**File Size :** {humanize.naturalsize(file.file_size)}\n**DC ID :** {dcid}""", reply_to_message_id=message.id, reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("📝 Rename", callback_data="rename"), InlineKeyboardButton("✖️ Cancel", callback_data="cancel")]]))
+                    await message.reply_text(f"""What Do You Want Me To Do With This File ?\n\nFile Name : {filename}\nFile Size : {humanize.naturalsize(file.file_size)}\nDC ID : {dcid}""", reply_to_message_id=message.id, reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("📝 Rename", callback_data="rename"), InlineKeyboardButton("✖️ Cancel", callback_data="cancel")]]))
                     total_rename(int(botid), prrename)
                     total_size(int(botid), prsize, file.file_size)
                 else:
@@ -148,6 +149,7 @@ async def send_doc(client, message):
             fileid = file.file_id
             total_rename(int(botid), prrename)
             total_size(int(botid), prsize, file.file_size)
-            await message.reply_text(f"""__What Do You Want Me To Do With This File ?__\n\n**File Name :** `{filename}`\n**File Size :** {filesize}\n**DC ID :** {dcid}""", reply_to_message_id=message.id, reply_markup=InlineKeyboardMarkup(
+
+await message.reply_text(f"""What Do You Want Me To Do With This File ?\n\nFile Name : {filename}\nFile Size : {filesize}\nDC ID : {dcid}""", reply_to_message_id=message.id, reply_markup=InlineKeyboardMarkup(
                 [[InlineKeyboardButton("📝 Rename", callback_data="rename"),
                   InlineKeyboardButton("✖️ Cancel", callback_data="cancel")]]))
