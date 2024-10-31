@@ -19,8 +19,10 @@ botid = token.split(':')[0]
 
 
 
-@Client.on_message(filters.private & filters.command(["start"]))
+
+@Client.on_message(filters.command("start"))
 async def start(client, message):
+    await message.reply_text("Hello! Welcome to the Rename Bot.")
     user_id = message.chat.id
     old = insert(int(user_id))
     
@@ -28,10 +30,7 @@ async def start(client, message):
         id = message.text.split(' ')[1]
     except IndexError:
         id = None
-
-    loading_sticker_message = await message.reply_sticker("CAACAgUAAxkBAAJ93Wb23tu2uAf_XIY2qORqOoURNsPTAAIoEQACQVaxV35FIcz8xQdgNgQ")
-    await asyncio.sleep(2)
-    await loading_sticker_message.delete()
+        
     
     text = f"""{message.from_user.mention} \nɪ  ᴀᴍ  ᴀɴ  ᴀᴅᴠᴀɴᴄᴇ  ꜰɪʟᴇ  ʀᴇɴᴀᴍᴇʀ  ᴀɴᴅ  ᴄᴏɴᴠᴇʀᴛᴇʀ  ʙᴏᴛ  ᴡɪᴛʜ  ᴘᴇʀᴍᴀɴᴇɴᴛ  ᴀɴᴅ  ᴄᴜsᴛᴏᴍ  ᴛʜᴜᴍʙɴᴀɪʟ  sᴜᴘᴘᴏʀᴛ.\n\nᴊᴜsᴛ  sᴇɴᴅ  ᴍᴇ  ᴀɴʏ  ᴠɪᴅᴇᴏ  ᴏʀ ᴅᴏᴄᴜᴍᴇɴᴛ !!\nᴏᴡɴᴇʀ @NARUTO_UZUMAKI07th</b>"""
     
