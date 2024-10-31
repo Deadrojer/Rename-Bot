@@ -6,7 +6,7 @@ import os
 API_ID = int(os.environ.get("API_ID", "23861777"))
 API_HASH = os.environ.get("API_HASH", "16104c9a6a05c337237819a218d46c5d")
 BOT_TOKEN = os.environ.get("BOT_TOKEN", "8095772116:AAFYdvAkmnMEXfEw_hVPOh6TjYxddZs3UmY")
-ADMIN = int(os.environ.get("ADMIN", ""))
+ADMIN = int(os.environ.get("ADMIN", "6672752177"))
 
 
 # Premium 4GB Renaming Client Config
